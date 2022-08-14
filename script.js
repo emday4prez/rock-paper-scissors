@@ -3,10 +3,18 @@ const getComputerChoice = () => {
  return options[Math.floor(Math.random() * 3)]
 }
 
+const buttons = document.querySelectorAll('button')
+buttons.forEach(button => {
+ button.addEventListener('click', () => {
+  console.log(playRound(button.id, getComputerChoice()))
+  
+ })
+})
+
 const playRound = (playerChoice, computerChoice) => {
  const player = playerChoice.toLowerCase()
 
- if(player === computerChoice) return `tie with ${player}s`
+ if(player === computerChoice) return `tie (${player})`
  if(player === 'rock' && computerChoice === 'scissors'){
   return `you win rock beats scissors`
  }else if (player === 'rock' && computerChoice === 'paper'){
@@ -28,7 +36,7 @@ const playRound = (playerChoice, computerChoice) => {
 const game = () => {
  let userWins = 0;
  let cpuWins = 0;
- for(let i =0; i < 5; i++){
+
  let userChoice = prompt('enter your choice: rock, paper, or scissors')
  let outcome = playRound(userChoice, getComputerChoice())
  
@@ -38,7 +46,7 @@ const game = () => {
   cpuWins++
  }
  console.log(outcome, `user wins:${userWins} | cpu wins:${cpuWins}`)
- }
+ 
  if (userWins > cpuWins){
   console.log(`you win!!! ${userWins} to ${cpuWins}`) 
  }else if (cpuWins > userWins){
@@ -46,4 +54,3 @@ const game = () => {
  }else console.log(`tie:  ${userWins} to ${cpuWins}`) 
 }
 
-game()
