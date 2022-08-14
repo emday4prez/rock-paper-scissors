@@ -1,0 +1,40 @@
+*{
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+body{
+ font-family: 'Open Sans', sans-serif;
+ font-size: 16px;
+ color: #333;
+ background: #fff;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ flex-direction: column;
+}
+
+.buttons{
+ padding: 1rem;
+ border: none;
+}
+.buttons button{
+ background: rgb(73, 71, 71);
+ color: #fff;
+ border: none;
+ padding: 1rem;
+ font-size: 1.2rem; 
+ border-radius: 10px;
+}
+
+.buttons > button:hover{
+ cursor: pointer;
+ background-color: black;
+}
+
+p{
+ margin: 1rem;
+ padding: 1rem;
+}
